@@ -2,12 +2,6 @@
 
 one:
   name: MyString
-  description: MyText
-  price: 9.99
-  category_id: 
 
 two:
   name: MyString
-  description: MyText
-  price: 9.99
-  category_id: 
