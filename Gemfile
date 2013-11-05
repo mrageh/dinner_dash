@@ -32,6 +32,12 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+# Create fake data to seed our database
+gem 'faker'
+
+# Minitest Capybara gem for rails
+gem 'minitest-rails-capybara'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
