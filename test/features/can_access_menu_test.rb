@@ -17,12 +17,18 @@ class CanAccessMenuTest < Capybara::Rails::TestCase
   end
 
   def test_it_diplays_all_items_for_each_category
+    category = Category.create(name: "Beverages and Drinks")
+    category2 = Category.create(name: "Snacks")
+    category.items.create!(name: "coke", price: 100, description: "tasty!")
+    category2.items.create!(name: "bagel", price: 100, description: "tasty!")
     visit categories_path
     within "#menu" do
-      within "#cat_name" do
-        assert page.has_content?()
+      within "#category_#{category.id}" do
+        assert page.has_content?("coke")
       end
     end
   end
+
+
 
 end

@@ -5,9 +5,11 @@
     <% @categories.each do |category| %>
         <li>category: <%= category.name %></li>
         <% category.items.each do |item| %>
+        <div id="<%= dom_id(category) %>">
               <p>name: <%= item.name %></p>
               <p>description: <%= item.description %></p>
               <p>price: <%= item.price %></p>
+        </div>
         <% end %>
     <% end %>
   </ul>
