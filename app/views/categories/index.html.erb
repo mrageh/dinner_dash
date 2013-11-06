@@ -1,0 +1,11 @@
+<h1>Menu</h1>
+
+<div id = "cat">
+  <ul>
+    <% @categories.each do |category| %>
+    <li>
+      <%= category.name %>
+    </li>
+    <% end %>
+  </ul>
+</div>
