@@ -11,11 +11,18 @@ class CanAccessMenuTest < Capybara::Rails::TestCase
 
     visit categories_path
     save_and_open_page
-    within "#cat" do
+    within "#menu" do
       assert page.has_content?("Beverages")
     end
-
-     # assert_selector 'li:first', text: "Sandwiches"
-     #  page.must_have_selector 'li:first', text: "Sandwiches"
   end
+
+  def test_it_diplays_all_items_for_each_category
+    visit categories_path
+    within "#menu" do
+      within "#cat_name" do
+        assert page.has_content?()
+      end
+    end
+  end
+
 end
