@@ -3,10 +3,12 @@
 <div id = "menu">
   <ul>
     <% @categories.each do |category| %>
-  <div class = "cat_name">
-    <li>
-      <%= category.name %>
-    </li>
+        <li>category: <%= category.name %></li>
+        <% category.items.each do |item| %>
+              <p>name: <%= item.name %></p>
+              <p>description: <%= item.description %></p>
+              <p>price: <%= item.price %></p>
+        <% end %>
     <% end %>
   </ul>
 </div>

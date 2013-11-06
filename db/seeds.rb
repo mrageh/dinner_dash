@@ -9,6 +9,7 @@
 class Seeder
   def initialize
     create_items
+    create_categories
   end
 
   def create_items
@@ -23,8 +24,23 @@ class Seeder
     item.name = Faker::Lorem.word
     item.description = Faker::Lorem.sentence
     item.price = Random.rand(10..100)
+    item.category_id = Random.rand(1..3)
     item.save
     item
+  end
+
+  def create_categories
+    3.times do
+      category = create_category
+      puts "Creating Category #{category.name}"
+    end
+  end
+
+  def create_category
+    category = Category.new
+    category.name = Faker::Lorem.word
+    category.save
+    category
   end
 end
 
