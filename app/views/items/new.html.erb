@@ -1,4 +1,6 @@
 <%= form_for @item do |f| %>
   <%= f.text_field :name, :id => "title" %>
+  <%= f.text_field :description, :id => "description" %>
+  <%= f.text_field :price, :id => "price" %>
   <%= f.submit "Save Item" %>
 <% end %>
