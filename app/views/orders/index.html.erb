@@ -1,14 +1,18 @@
 <h1>All orders</h1>
-
 <ul id="orders">
   <% @orders.each do |order| %>
     <li>
     <div id="<%= dom_id(order) %>">
-     <p>order id: <%= @order.id %></p>
-      <p>order items: <%= @order.items %></p>
-      <p>order placed at: <%= @order.created_at %></p>
-      <p>order updated at: <%= @order.updated_at %></p>
+     <h2><p>order id: <%= order.id %></p></h2>
+      <p><h3>order items:</h3> <% order.items.each do |item| %></p>
+        <p><b>name: </b><%= item.name %></p>
+        <p><b>description: </b><%= item.description %></p>
+        <p><b>price: </b><%= item.price %></p>
+      <% end %>
+      <p>order placed at: <%= order.created_at %></p>
+      <p>order updated at: <%= order.updated_at %></p>
     </div>
     </li>
   <% end %>
 </ul>
+<%= link_to "See Menu", categories_path, class: "see_menu" %>
