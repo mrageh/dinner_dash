@@ -1,0 +1,14 @@
+<h1>All orders</h1>
+
+<ul id="orders">
+  <% @orders.each do |order| %>
+    <li>
+    <div id="<%= dom_id(order) %>">
+     <p>order id: <%= @order.id %></p>
+      <p>order items: <%= @order.items %></p>
+      <p>order placed at: <%= @order.created_at %></p>
+      <p>order updated at: <%= @order.updated_at %></p>
+    </div>
+    </li>
+  <% end %>
+</ul>
