@@ -1,16 +1,38 @@
+<%- if flash.notice %>
+  <p><%= flash.notice %></p>
+<% end %>
+<%= debug @order %>
+<%= debug @order.order_items %>
+
+<%= link_to "Logout", session_path, :method => :delete %>
+
 <h1>Menu</h1>
 
 <div id = "menu">
   <ul>
     <% @categories.each do |category| %>
-        <li>category: <%= category.name %></li>
-        <% category.items.each do |item| %>
-        <div id="<%= dom_id(category) %>">
-              <p>name: <%= item.name %></p>
-              <p>description: <%= item.description %></p>
-              <p>price: <%= item.price %></p>
+        <li id="<%= dom_id(category) %>">category: <%= category.name %>
+          <% category.items.each do |item| %>
+        <div id="<%= dom_id(item) %>">
+          <p>name: <%= item.name %></p>
+          <p>description: <%= item.description %></p>
+          <p>price: <%= item.price %></p>
+          <%= form_for item.order_items.new do |f| %>
+            <%= f.hidden_field :item_id %>
+            <%= f.submit "Add to Cart" %>    
+          <select id="quantity_<%= dom_id(item) %>" name="quantity">
+          <option selected="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          </select> <label for="quantity_<%= dom_id(item) %>">How many?</label><br/>
+          <% end %>
         </div>
         <% end %>
+      </li>
     <% end %>
   </ul>
 </div>

@@ -28,6 +28,15 @@ class CanAccessMenuTest < Capybara::Rails::TestCase
     end
   end
 
+  def test_it_shows_categories
+    Category.create(name: "Beverages")
+
+    visit categories_path
+    within "#menu" do
+      assert page.has_content?("Beverages")
+    end
+  end
+
 
 
 end
