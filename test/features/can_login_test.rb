@@ -8,8 +8,14 @@ class CanLoginTest < Capybara::Rails::TestCase
 
   def test_login_form_can_be_filled_in
     visit new_session_path
-    save_and_open_page
-    fill_in "session_username", with: "Melanie"
-    fill_in "session_password", with: "123456"
+    fill_in "session[username]", with: "Melanie"
+    fill_in "session[password]", with: "123456"
+  end
+
+  def test_login_form_can_be_submitted
+    visit new_session_path
+    fill_in "session[username]", with: "Melanie"
+    fill_in "session[password]", with: "123456"
+    click_button('Login')
   end
 end
