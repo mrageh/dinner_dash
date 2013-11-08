@@ -1,0 +1,6 @@
+  <h3>Login Now:</h3>
+  <%= form_for :session, :url => session_path do |f| %>
+    <%= f.label :username %><%= f.text_field :username %>
+    <%= f.label :password %><%= f.text_field :password %>
+    <%= f.submit "Login" %>
+  <% end %>

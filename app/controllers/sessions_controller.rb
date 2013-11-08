@@ -3,4 +3,7 @@ class SessionsController < ApplicationController
     session[:order_id] = nil
     redirect_to categories_path
   end
+  def new
+
+  end
 end
