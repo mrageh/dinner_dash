@@ -1,8 +1,7 @@
-  <h3>Login Now:</h3>
-  <%= form_for :session, :url => session_path do |f| %>
-    <%= f.label :user_name %><%= f.text_field :user_name, :id => 'user_name' %>
-    <%= f.label :password %><%= f.text_field :password, :id => :password %>
+  <h3>Login</h3>
+  <%= form_for :session do |f| %>
+    <%= f.label :email %><%= f.text_field :email %><br />
+    <%= f.label :password %><%= f.text_field :password %><br />
     <%= f.submit "Login" %>
   <% end %>
-<!-- params[:user_name] -->
-<!-- params[:password] -->
+<!-- , :id => :email -->

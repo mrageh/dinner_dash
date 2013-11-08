@@ -1,5 +1,5 @@
 DinnerDash::Application.routes.draw do
-  root to: 'items#index'
+  root to: 'categories#index'
   resources :items
   resources :categories
   resources :orders
