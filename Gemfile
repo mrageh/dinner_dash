@@ -22,7 +22,7 @@ group :test, :development do
   gem 'faker'
   gem 'minitest-rails-capybara'
   gem 'launchy'
-  # gem 'better_errors'
+  gem 'better_errors'
   gem 'binding_of_caller'
 end
 
@@ -31,7 +31,7 @@ end
 # Minitest Capybara gem for rails
 
 # Use ActiveModel has_secure_password
-gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use unicorn as the app server
 # gem 'unicorn'

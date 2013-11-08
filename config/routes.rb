@@ -4,7 +4,8 @@ DinnerDash::Application.routes.draw do
   resources :categories
   resources :orders
   resources :order_items, :only => [:create, :destroy]
-  resource  :session
+  resource  :session,     :only => [:new, :create, :destroy]
+  resources :users
 
 
   # patch 'add_to_cart', to: 'orders#add_to_cart'
