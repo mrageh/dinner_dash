@@ -1,8 +1,8 @@
   <h3>Login</h3>
   <%= flash.alert %>
-  <%= form_for :session do |f| %>
-    <%= f.label :email %><%= f.text_field :email %><br />
-    <%= f.label :password %><%= f.text_field :password %><br />
-    <%= f.submit "Login" %>
+  <%= form_tag session_path do %>
+    <%= label_tag :email %><%= text_field_tag :email %><br />
+    <%= label_tag :password %><%= text_field_tag :password %><br />
+    <%= submit_tag "Login" %>
   <% end %>
 <!-- , :id => :email -->

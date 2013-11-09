@@ -14,7 +14,6 @@ class UsersController < ApplicationController
       flash.alert = 'New Account Successfully created'
       redirect_to new_session_path
     else
-      # flash.alert = @user.errors.full_messages
       render new_user_path
     end
   end
