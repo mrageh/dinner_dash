@@ -10,18 +10,24 @@ class Seeder
   def initialize
     create_items
     create_categories
+    create_users
   end
 
   def create_items
-    10.times do
+    15.times do
       item = create_item
       puts "Creating Item #{item.name}"
     end
   end
 
+  def items_name
+    ['Bagel', 'French Dip', 'Cinnamon', 'Veggie Sandwich', 'Coffee', 'Tea', 'Orange Juice', 'Rolls', 'Eclaire', 'Croissant'].sample
+  end
+
   def create_item
     item = Item.new
-    item.name = Faker::Lorem.word
+    this_item = items_name
+    item.name = this_item
     item.description = Faker::Lorem.sentence
     item.price = Random.rand(10..100)
     item.category_id = Random.rand(1..3)
@@ -36,12 +42,40 @@ class Seeder
     end
   end
 
+  def categories_name
+    ['Beverages', 'Baked Goods', 'Sides', 'Sandwiches'].sample
+  end
+
   def create_category
     category = Category.new
-    category.name = Faker::Lorem.word
+    this_category = categories_name
+    category.name = this_category
     category.save
     category
   end
+
+  def users_name
+    ['John', 'Luke', 'Master Chief', 'Louisa', 'Elaine', 'Adam'].sample
+  end
+
+  def create_user
+    user = User.new
+    this_user = users_name
+    user.name = this_user
+    user.user_name = this_user
+    user.email = "#{this_user}.@example.com"
+    user.password = 'password'
+    user.password_confirmation = 'password'
+    user
+  end
+
+  def create_users
+    3.times do
+      user = create_user
+      puts "Created User #{user.user_name}"
+    end
+  end
+
 end
 
 Seeder.new
