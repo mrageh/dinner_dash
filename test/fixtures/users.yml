@@ -9,6 +9,6 @@ one:
 
 two:
   name: MyString
-  user_name: MyString
-  email: MyString
+  user_name: thanks
+  email: thankselaine
   password_digest: MyString
