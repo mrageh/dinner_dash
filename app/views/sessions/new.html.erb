@@ -1,4 +1,5 @@
   <h3>Login</h3>
+  <%= flash.alert %>
   <%= form_for :session do |f| %>
     <%= f.label :email %><%= f.text_field :email %><br />
     <%= f.label :password %><%= f.text_field :password %><br />
