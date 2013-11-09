@@ -27,6 +27,8 @@ group :test, :development do
 end
 
 
+#Better looking forms
+gem 'simple_form'
 
 # Minitest Capybara gem for rails
 

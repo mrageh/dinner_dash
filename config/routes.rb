@@ -6,7 +6,7 @@ DinnerDash::Application.routes.draw do
   resources :order_items, :only => [:create, :destroy]
   resource  :session,     :only => [:new, :create, :destroy]
   resources :users
-
+  get 'signup', to: 'users#new', as: 'signup'
 
   # patch 'add_to_cart', to: 'orders#add_to_cart'
 end
