@@ -55,24 +55,25 @@ class Seeder
   end
 
   def users_name
-    ['John', 'Luke', 'Master Chief', 'Louisa', 'Elaine', 'Adam'].sample
+    ['John', 'Luke', 'Master Chief', 'Louisa', 'Elaine', 'Adam']
   end
 
-  def create_user
+  def create_user(name)
     user = User.new
-    this_user = users_name
+    this_user = name
     user.name = this_user
     user.user_name = this_user
-    user.email = "#{this_user}.@example.com"
+    user.email = "#{this_user}@example.com"
     user.password = 'password'
     user.password_confirmation = 'password'
+    user.save!
     user
   end
 
   def create_users
-    3.times do
-      user = create_user
-      puts "Created User #{user.user_name}"
+    users_name.each do |name|
+      user = create_user(name)
+      puts "Created User #{user.email}"
     end
   end
 
