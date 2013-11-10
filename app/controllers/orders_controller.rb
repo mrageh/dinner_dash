@@ -7,6 +7,10 @@ class OrdersController < ApplicationController
     end
   end
 
+  def show
+    @order = find_or_create_order
+  end
+
   def add_to_cart
     
     redirect_to categories_path

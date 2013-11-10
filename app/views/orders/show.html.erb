@@ -1,0 +1,23 @@
+<h1>Current Order</h1>
+<ul id="orders">
+  <li>
+  <div id="<%= dom_id(@order) %>">
+   <h2><p>order id: <%= @order.id %></p></h2>
+    <p><h3>order items:</h3> <% @order.order_items.each do |order_item| %></p>
+      <p><b>name: </b><%= order_item.item.name %></p>
+      <p><b>description: </b><%= order_item.item.description %></p>
+      <p><b>price: </b><%= order_item.item.price %></p>
+      <p><b>quantity: </b><%= order_item.quantity %> </br>
+      <%= link_to "Remove From Cart", order_item_path(order_item), {class: "Remove From Cart", method: :delete} %>
+    <% end %>
+    <hr>
+      <p><b> Order Total: </b><%= @order.total %>
+
+    <p>order placed at: <%= @order.created_at %></p>
+    <p>order updated at: <%= @order.updated_at %></p>
+  </div>
+  </li>
+  <hr>
+  <hr>
+</ul>
+<%= link_to "See Menu", categories_path, class: "see_menu" %>
