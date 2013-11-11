@@ -8,7 +8,7 @@ class OrderItemsController < ApplicationController
 
     item = Item.find(params[:order_item][:item_id])
     if order_item.save
-      flash.notice = "Added #{order_item.quantity} #{item.name.pluralize(order_item.quantity)} to your cart."
+      flash.notice = "Added #{order_item.quantity} #{item.name.pluralize( order_item.quantity)} to your cart."
       redirect_to categories_path
     end
   end

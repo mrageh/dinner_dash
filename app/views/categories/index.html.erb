@@ -1,8 +1,6 @@
 <%- if flash.notice %>
   <p><%= flash.notice %></p>
 <% end %>
-<%= debug @order %>
-<%= debug @order.order_items %>
 
 <% if @user %>
 <%= link_to "Logout", session_path, :method => :delete %>

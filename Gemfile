@@ -24,6 +24,7 @@ group :test, :development do
   gem 'launchy'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'guard-minitest'
 end
 
 
