@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  # before_action :authorize, :except => [:index]
+
   include ItemsHelper
 
   def index

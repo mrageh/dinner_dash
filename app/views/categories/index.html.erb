@@ -1,10 +1,10 @@
 <%- if flash.notice %>
   <p><%= flash.notice %></p>
 <% end %>
-<%= debug @order %>
-<%= debug @order.order_items %>
 
+<% if @user %>
 <%= link_to "Logout", session_path, :method => :delete %>
+<% end %>
 
 <h1>Menu</h1>
 
@@ -19,7 +19,7 @@
           <p>price: <%= item.price %></p>
           <%= form_for item.order_items.new do |f| %>
             <%= f.hidden_field :item_id %>
-            <%= f.submit "Add to Cart" %>    
+            <%= f.submit "Add to Cart" %>
           <select id="quantity_<%= dom_id(item) %>" name="quantity">
           <option selected="0">0</option>
           <option value="1">1</option>

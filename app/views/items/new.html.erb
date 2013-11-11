@@ -1,6 +1,7 @@
+<h2>Create a New Item</h2>
 <%= form_for @item do |f| %>
-  <%= f.text_field :name, :id => "title" %>
-  <%= f.text_field :description, :id => "description" %>
-  <%= f.text_field :price, :id => "price" %>
+  <%= f.label :name %><%= f.text_field :name %><br />
+  <%= f.label :description %><%= f.text_field :description %><br />
+  <%= f.label :price %><%= f.text_field :price %><br />
   <%= f.submit "Save Item" %>
 <% end %>

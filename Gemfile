@@ -22,8 +22,11 @@ group :test, :development do
   gem 'faker'
   gem 'minitest-rails-capybara'
   gem 'launchy'
-  # gem 'better_errors'
-  # gem 'binding_of_caller'
+
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'guard-minitest'
+
 end
 
 
