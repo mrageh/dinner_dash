@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  # before_action :authorize, :except => [:index]
+   before_action :is_admin?, :except => [:index]
 
   include ItemsHelper
 
