@@ -13,12 +13,16 @@ class OrdersController < ApplicationController
   end
 
   def checkout
-    # fail
-    @order = Order.find(current_order)
-    @order.update(status: "completed")
-    flash.notice = "Order Completed"
-    session[:order_id] = nil
-    redirect_to categories_path
+    if session[:user_id]
+      @order = Order.find(current_order)
+      @order.update(status: "completed")
+      flash.notice = "Order Completed"
+      session[:order_id] = nil
+      redirect_to categories_path
+    else
+      flash.notice = "You need to sign in first!"
+      redirect_to new_session_path
+    end
   end
 
   # def add_to_cart

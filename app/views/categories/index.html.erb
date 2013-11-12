@@ -1,11 +1,11 @@
 <%- if flash.notice %>
   <p><%= flash.notice %></p>
 <% end %>
-<%= debug @order %>
-<%= debug @order.order_items %>
 
 <%= link_to "Log in!", session_path, :method => :new %>
+<% if current_user %>
 <%= link_to "Logout", session_path, :method => :delete %>
+<% end %>
 
 <h1>Menu</h1>
 
