@@ -4,6 +4,7 @@
 <%= debug @order %>
 <%= debug @order.order_items %>
 
+<%= link_to "Log in!", session_path, :method => :new %>
 <%= link_to "Logout", session_path, :method => :delete %>
 
 <h1>Menu</h1>
@@ -21,8 +22,7 @@
             <%= f.hidden_field :item_id %>
             <%= f.submit "Add to Cart" %>    
           <select id="quantity_<%= dom_id(item) %>" name="quantity">
-          <option selected="0">0</option>
-          <option value="1">1</option>
+          <option selected="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
           <option value="4">4</option>
