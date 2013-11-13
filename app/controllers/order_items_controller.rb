@@ -18,7 +18,7 @@ class OrderItemsController < ApplicationController
     # if item_to_delete.quantity < 1 
       
     item_to_delete.destroy
-    redirect_to orders_path
+    redirect_to order_path(current_order)
   end
 
 end

@@ -8,5 +8,11 @@ DinnerDash::Application.routes.draw do
   resources :users
   get 'signup', to: 'users#new', as: 'signup'
 
+  # namespace :admin do
+  #   resources :orders
+  # end
+
+  get 'checkout' => 'orders#checkout', as: 'checkout'
+
   # patch 'add_to_cart', to: 'orders#add_to_cart'
 end

@@ -1,0 +1,23 @@
+category_id,name,description,price
+1,The Veggie,"An assortment of fresh vegetables and mozzarella on a whole wheat roll.",4.25
+1,Salmon Pesto,"Cucumber, pesto and smoked salmon on our fresh bread.",5.25
+1,Breakfast Roll,"A sausage patty, farm-fresh egg, and your choice of cheese one of our dinner rolls.",3.75
+1,Roast Beef,"Thinly sliced roast beef piled high on a warm pita with feta and olives.",5.25
+1,Chicken Curry,"Our home-made chicken curry on fresh bread.",5.55
+1,Pastrami on Rye,"Sliced pastrami, lettuce, tomato, with our house sauce on rye bread.",4.75
+1,Ham and Cheese,"A classic! Served on white bread.",2.75
+2,Latte,"Steamed milk and espresso",3.15
+2,Orange Juice,"Fresh squeezed everyday!",2.25
+2,Drip Coffee,"A delicious basic",1.55
+2,Espresso,"Get charged up!",2.25
+2,Smoothie,"An easy breakfast on the go.",4.15
+3,House Salad,"A mix of fresh local greens",2.55
+3,Seasonal Fruit,"Bright and fresh",2.75
+3,Sweet Potato Chips,"A twist on a classic!",3.75
+3,Baked Beans,"Don't go on a road trip anytime soon!",2.15
+3,Coleslaw,"Crunchy and creamy",1.25
+4,Rustic Loaf,"Hearty and filling!",3.15
+4,Dinner Rolls,"Get enough for everyone to share",1.25
+4,Cinnamon Bun,"A rich and delicous treat",2.75
+4,Bran Muffin,"Grandma's favorite",1.75
+4,Whole Wheat Loaf,"A healthy take on our old favorite",3.25

@@ -5,6 +5,8 @@
   <% @items.each do |item| %>
     <li>
       <%= item.name %>
+      <%= link_to "Edit", edit_item_path(item.id), {class: "Edit", method: :get} %>
+      <%= link_to "Remove", item_path(item.id), data: {confirm: "Really remove this item?"}, class: "Delete", method: :delete %>
     </li>
   <% end %>
 </ul>
