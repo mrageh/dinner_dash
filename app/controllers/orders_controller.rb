@@ -1,18 +1,28 @@
 class OrdersController < ApplicationController
 
   def index
-    @orders = Order.all
-    if @orders.first.items.any?
-      @items = @orders.first.items.first.name
-    end
+    @orders = current_user.orders
   end
 
   def show
-    @order = find_or_create_order
+    @order = current_order
   end
 
-  def add_to_cart
-    
+  def update
+
+  end
+
+  def checkout
+    # fail
+    @order = Order.find(current_order)
+    @order.update(status: "completed")
+    flash.notice = "Order Completed"
+    session[:order_id] = nil
     redirect_to categories_path
   end
+
+  # def add_to_cart
+    
+  #   redirect_to categories_path
+  # end
 end

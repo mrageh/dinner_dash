@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       puts 'checking it works'
       session[:user_id] = user.id
+      user.orders << find_or_create_order
       redirect_to categories_path, notice: 'Signed in successfully.'
     else
       flash.now.alert = 'Invalid email or password'

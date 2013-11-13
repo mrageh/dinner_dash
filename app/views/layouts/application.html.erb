@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD
   <%= stylesheet_link_tag 'styles' %>
   <head>
     <title>DinnerDash</title>
@@ -20,6 +21,17 @@
     <a class="navbar-brand" href="/categories"></a>
 
   </div>
+=======
+<head>
+  <title>DinnerDash</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<p><%= flash.notice %></p>
+<%= yield %>
+>>>>>>> complete_order
 
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
