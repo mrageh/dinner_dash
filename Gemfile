@@ -5,6 +5,8 @@ gem 'sqlite3'
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
+gem 'therubyracer'
+gem 'less-rails-bootstrap'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -22,8 +24,11 @@ group :test, :development do
   gem 'faker'
   gem 'minitest-rails-capybara'
   gem 'launchy'
+
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'guard-minitest'
+
 end
 
 

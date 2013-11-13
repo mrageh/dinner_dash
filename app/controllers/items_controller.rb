@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+   before_action :is_admin?, :except => [:index]
+
   include ItemsHelper
 
   def index

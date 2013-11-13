@@ -20,7 +20,7 @@
           <p>price: <%= item.price %></p>
           <%= form_for item.order_items.new do |f| %>
             <%= f.hidden_field :item_id %>
-            <%= f.submit "Add to Cart" %>    
+            <%= f.submit "Add to Cart" %>
           <select id="quantity_<%= dom_id(item) %>" name="quantity">
           <option selected="1">1</option>
           <option value="2">2</option>

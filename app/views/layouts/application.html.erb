@@ -1,6 +1,27 @@
 <!DOCTYPE html>
-<%= stylesheet_link_tag 'styles' %>
 <html>
+<<<<<<< HEAD
+  <%= stylesheet_link_tag 'styles' %>
+  <head>
+    <title>DinnerDash</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+  </head>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <h2 ><a id="brand-text"href="/categories">Flying Sugar</a></h2>
+    <a class="navbar-brand" href="/categories"></a>
+
+  </div>
+=======
 <head>
   <title>DinnerDash</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
@@ -10,6 +31,27 @@
 <body>
 <p><%= flash.notice %></p>
 <%= yield %>
+>>>>>>> complete_order
 
-</body>
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+      <li ><a href="#">Link</a></li>
+      <li><a href="#">Link</a></li>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</nav>
+  <body class = 'bgimage'>
+    <div class="container">
+      <div class="centered">
+        <%- if flash.notice %>
+          <p><%= flash.notice %></p>
+        <% end %>
+
+        <h1>DinnerDash</h1>
+        <%= yield %>
+      </div>
+    </div>
+  </body>
 </html>
+
