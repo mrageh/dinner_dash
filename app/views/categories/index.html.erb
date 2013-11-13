@@ -11,8 +11,9 @@
         <div class="header-text" id="<%= dom_id(category) %>"><%= category.name %>
         <div class='right-arrow'><%= image_tag 'body_arrow_left.png' %></div>
       </div>
-          <% category.items.each do |item| %>
-        <div id="<%= dom_id(item) %>">
+      <div class="items">
+        <% category.items.each do |item| %>
+        <div class="item_name" id="<%= dom_id(item) %>">
           <p>name: <%= item.name %></p>
           <p>description: <%= item.description %></p>
           <p>price: <%= item.price %></p>
