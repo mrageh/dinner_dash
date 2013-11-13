@@ -1,41 +1,54 @@
+require 'csv'
+
 class Seeder
   def initialize
-    create_items
+    create_item
     create_categories
     create_users
   end
 
-  def create_items
-    15.times do
-      item = create_item
-      puts "Creating Item #{item.name}"
-    end
-  end
+  # def create_items
+  #   22.times do
+  #     item = create_item
+  #     puts "Creating Item #{item.name}"
+  #   end
+  # end
 
-  def items_name
-    ['Bagel', 'French Dip', 'Cinnamon', 'Veggie Sandwich', 'Coffee', 'Tea', 'Orange Juice', 'Rolls', 'Eclaire', 'Croissant'].sample
-  end
+  # def items_name
+  #   ['Bagel', 'French Dip', 'Cinnamon', 'Veggie Sandwich', 'Coffee', 'Tea', 'Orange Juice', 'Rolls', 'Eclaire', 'Croissant'].sample
+  # end
 
   def create_item
-    item = Item.new
-    this_item = items_name
-    item.name = this_item
-    item.description = Faker::Lorem.sentence
-    item.price = Random.rand(10..100)
-    item.category_id = Random.rand(1..3)
-    item.save
-    item
+    contents = CSV.open "./db/db_seed.csv", headers: true, header_converters: :symbol
+ 
+    contents.each do |row|
+ 
+    name        = row[:name]
+    description = row[:description]
+    price       = row[:price]
+    category_id = row[:category_id]
+
+    item = Item.create(category_id: category_id, name: name, description: description, price: price)
+  end
+    # item = Item.new
+    # this_item = items_name
+    # item.name = this_item
+    # item.description = Faker::Lorem.sentence
+    # item.price = Random.rand(10..100)
+    # item.category_id = Random.rand(1..3)
+    # item.save
+    # item
   end
 
   def create_categories
-    3.times do
+    4.times do
       category = create_category
       puts "Creating Category #{category.name}"
     end
   end
 
   def categories_name
-    ['Beverages', 'Baked Goods', 'Sides', 'Sandwiches'].sample
+    ['Sandwiches', 'Beverages', 'Sides', 'Baked Goods']
   end
 
   def create_category
