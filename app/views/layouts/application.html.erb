@@ -26,7 +26,13 @@
           <%= link_to "log in", session_path, :method => :new %>
         <% end %>
       </li>
-      <li><a href="#">How do I do this??</a></li>
+      <li>
+        <% if @order.total > 0 %>
+          <%= link_to "bread basket: #{@order.total}", order_path(@order), class: "see_cart" %>
+        <% else %>
+          <%= link_to "bread basket: empty", order_path(@order), class: "see_cart" %>
+        <% end %>
+      </li>
     </ul>
   </div><!-- /.navbar-collapse -->
 </nav>
