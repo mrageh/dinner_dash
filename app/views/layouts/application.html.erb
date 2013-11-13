@@ -27,7 +27,7 @@
         <% end %>
       </li>
       <li>
-        <% if @order.total > 0 %>
+        <% if @order && @order.total > 0 %>
           <%= link_to "bread basket: #{@order.total}", order_path(@order), class: "see_cart" %>
         <% else %>
           <%= link_to "bread basket: empty", order_path(@order), class: "see_cart" %>

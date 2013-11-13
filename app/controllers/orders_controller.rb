@@ -1,7 +1,11 @@
 class OrdersController < ApplicationController
 
   def index
-    @orders = current_user.orders.where(status: "completed")
+    unless is_admin?
+      @orders = current_user.orders.where(status: "completed")
+    else
+      @orders = Order.all
+    end
   end
 
   def show
@@ -26,7 +30,7 @@ class OrdersController < ApplicationController
   end
 
   # def add_to_cart
-    
+
   #   redirect_to categories_path
   # end
 end
