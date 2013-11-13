@@ -2,41 +2,48 @@
   background: url(/assets/bg_004.jpg);
 }
 .navbar-default {
-background-color: #d2d2d2;
-opacity: 0.90;
-margin-bottom: 0px;
-height: 100px;
--webkit-box-shadow: 0px 7px 5px rgba(0, 0, 0, 1);
--moz-box-shadow:    0px 7px 5px rgba(0, 0, 0, 1);
-box-shadow:         0px 7px 5px rgba(0, 0, 0, 1);
+  height: 250px;
+}
+
+.navbar {
+  background: transparent url(/assets/fs_header-bar.png) no-repeat left top;
+  height: 238px;
+  border: none;
+  opacity: .90;
+  position: relative;
+  z-index:100;
 }
 .navbar-brand{
-background: url(/assets/fs_logo_small.png) no-repeat left center;
+
 width: 80px;
-margin-top: -40px;
+margin-top: 20px;
 margin-left: 30px;
 margin-right: 100px;
 height: 80px;
 }
+#brand{
+  color: #000;
+  margin-left: 180px;
+  margin-top: 60px;
+  clear: both;
+  width: 300px;
+  font-weight:normal;
+  font-family: Trebuchet MS;
+}
 .navbar-default .navbar-nav > li > a{
-  font-size: 20px;
+  font-size: 25px;
 }
-.navbar-default .navbar-nav{
-  margin-left: 150px;
-  margin-top: 45px;
+.navbar-default .navbar-nav {
+margin-left: 350px;
+margin-top: 90px;
 }
-
-#brand-text{
-margin-left: 110px;
-color: #000;
-}
-
 .container{
-
+  margin-top: -105px;
 }
 .centered{
   padding-top: 100px;
-  background-color: #d2d2d2;
-  opacity: 0.60;
+  background-color: rgba(210,210,210, 0.8);
+  opacity: 0.75;
   text-align: center;
+  z-index: -1000;
 }
