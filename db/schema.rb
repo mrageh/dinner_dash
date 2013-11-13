@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20131110002412) do
-=======
 ActiveRecord::Schema.define(version: 20131112013339) do
->>>>>>> complete_order
 
   create_table "categories", force: true do |t|
     t.string   "name"
