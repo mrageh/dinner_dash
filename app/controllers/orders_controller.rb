@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
 
   def index
-    @orders = current_user.orders
+    @orders = current_user.orders.where(status: "completed")
   end
 
   def show

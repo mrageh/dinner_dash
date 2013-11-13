@@ -15,7 +15,4 @@ class Order < ActiveRecord::Base
     sum
   end
 
-  def complete_order
-    # @order.complete? == true
-  end
 end
