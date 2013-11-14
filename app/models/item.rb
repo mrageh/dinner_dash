@@ -4,6 +4,4 @@ class Item < ActiveRecord::Base
   has_many :orders, through: :order_items
   validates :description, :name, presence: true
   validates :price, numericality: { greater_than: 0}
-
-
 end

@@ -15,7 +15,6 @@ class OrderItemsController < ApplicationController
 
   def destroy
     item_to_delete = OrderItems.find(params[:id])
-    # if item_to_delete.quantity < 1 
       
     item_to_delete.destroy
     redirect_to order_path(current_order)
