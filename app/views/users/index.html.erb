@@ -1,7 +1,8 @@
+<h1> Listing of all users </h1><hr><hr>
 <% @users.each do |user| %>
-  <%= user.name %>
-  <%= user.user_name %>
-  <%= user.email %>
-  <%= user.total_spent %>
-  <%= link_to 'Orders', orders_path(user) %>
+  <h2>Name: <%= user.name %></h2>
+  <h5>User Name: <%= user.user_name %></h5>
+  <h5><%= user.email %></h5>
+  <h5> Total purchases: <%= user.total_spent %> </h5>
+  <%= link_to 'View All Orders For This User', orders_path(user) %></br><hr>
 <% end %>

@@ -1,7 +1,10 @@
+<% if current_user.admin? %>
+<h1>All orders</h1>
+<% else %>
 <h1>All orders for <%= current_user.email%></h1>
+<% end %>
 <ul id="orders">
   <% @orders.each do |order| %>
-    <li>
     <div id="<%= dom_id(order) %>">
      <h2><p>order id: <%= order.id %></p></h2>
       <p><h3>order items:</h3> 
@@ -17,7 +20,6 @@
 
       <p>order completed at: <%= order.updated_at %></p>
     </div>
-    </li>
     <hr>
     <hr>
   <% end %>
