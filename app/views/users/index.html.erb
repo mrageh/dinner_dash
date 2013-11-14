@@ -2,6 +2,6 @@
   <%= user.name %>
   <%= user.user_name %>
   <%= user.email %>
-  <%= user.orders.total %>
-  <%= link_to 'Orders', order_path(user) %>
+  <%= user.total_spent %>
+  <%= link_to 'Orders', orders_path(user) %>
 <% end %>
