@@ -19,6 +19,7 @@ class SessionsController < ApplicationController
   end
 
   def new
+    @order = find_or_create_order
   end
 
   private

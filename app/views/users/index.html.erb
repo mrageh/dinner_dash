@@ -1,0 +1,7 @@
+<% @users.each do |user| %>
+  <%= user.name %>
+  <%= user.user_name %>
+  <%= user.email %>
+  <%= user.orders.total %>
+  <%= link_to 'Orders', order_path(user) %>
+<% end %>

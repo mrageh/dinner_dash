@@ -23,7 +23,7 @@
         <% if current_user %>
           <%= link_to "log out", session_path, :method => :delete %>
         <% else %>
-          <%= link_to "log in", session_path, :method => :new %>
+          <%= link_to "log in", new_session_path %>
         <% end %>
       </li>
       <li>
@@ -31,6 +31,11 @@
           <%= link_to "bread basket: #{@order.total}", order_path(@order), class: "see_cart" %>
         <% else %>
           <%= link_to "bread basket: empty", order_path(@order), class: "see_cart" %>
+        <% end %>
+      </li>
+      <li>
+        <% if current_user && current_user.admin? %>
+          <%= link_to "dashboard", dashboard_path %>
         <% end %>
       </li>
     </ul>
