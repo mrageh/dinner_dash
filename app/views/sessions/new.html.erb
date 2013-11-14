@@ -2,7 +2,7 @@
   <%= flash.alert %>
   <%= form_tag session_path do %>
     <%= label_tag :email %><%= text_field_tag :email %><br />
-    <%= label_tag :password %><%= text_field_tag :password %><br />
+    <%= label_tag :password %><%= password_field_tag :password %><br />
     <%= submit_tag "Login" %>
   <% end %>
   <%= link_to "Not a Member?", new_user_path, class: "submit_order" %>

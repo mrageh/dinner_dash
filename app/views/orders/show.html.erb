@@ -4,6 +4,7 @@
   <div id="<%= dom_id(@order) %>">
    <h2><p>order id: <%= @order.id %></p></h2>
     <p><h3>order items:</h3> <% @order.order_items.each do |order_item| %></p>
+    <%= image_tag "items_#{order_item.item_id}.jpg", class: "item_img" %>
       <p><b>name: </b><%= order_item.item.name %></p>
       <p><b>description: </b><%= order_item.item.description %></p>
       <p><b>price: </b><%= order_item.item.price %></p>
@@ -21,6 +22,7 @@
 
     <p>order created at: <%= @order.created_at %></p>
     <p>order updated at: <%= @order.updated_at %></p>
+  </div>
   </div>
   </li>
   <hr>
