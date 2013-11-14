@@ -8,10 +8,13 @@ DinnerDash::Application.routes.draw do
   resources :users
   get 'signup', to: 'users#new', as: 'signup'
   get 'dashboard', to: 'dashboard#index'
-
+  get 'errors', to: 'errors#index'
+  get "/404", :to => "errors#index"
   # namespace :admin do
   #   resources :orders
   # end
+  # routes.rb
+
 
   get 'checkout' => 'orders#checkout', as: 'checkout'
 

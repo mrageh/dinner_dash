@@ -19,6 +19,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def show_errors
+    redirect_to errors_path
+  end
+
   protected
 
   def current_user
