@@ -12,8 +12,11 @@
     <% end %>
     <hr>
       <p><b> Order Total: </b><%= @order.total %></p>
-
-       <%= link_to "Submit Order", checkout_path, class: "submit_order" %>
+      <% if current_order.items.any? %> 
+        <%= link_to "Submit Order", checkout_path, class: "submit_order" %>
+        <% else %>
+        <%= link_to "Submit Order", order_path(current_order), method: :get, data:{confirm: "You need to add items if you want to check out!"} %>
+       <% end %>
 
 
     <p>order created at: <%= @order.created_at %></p>
