@@ -3,8 +3,8 @@ require 'csv'
 class Seeder
   def initialize
     create_item
-    create_categories
-    create_users
+    # create_categories
+    # create_users
   end
 
   # def create_items
@@ -40,47 +40,47 @@ class Seeder
     # item
   end
 
-  def create_categories
-    4.times do
-      category = create_category
-      puts "Creating Category #{category.name}"
-    end
-  end
+  # def create_categories
+  #   4.times do
+  #     category = create_category
+  #     puts "Creating Category #{category.name}"
+  #   end
+  # end
 
-  def categories_name
-    ['Sandwiches', 'Beverages', 'Sides', 'Baked Goods']
-  end
+  # def categories_name
+  #   ['Sandwiches', 'Beverages', 'Sides', 'Baked Goods']
+  # end
 
-  def create_category
-    category = Category.new
-    this_category = categories_name
-    category.name = this_category
-    category.save
-    category
-  end
+  # def create_category
+  #   category = Category.new
+  #   this_category = categories_name
+  #   category.name = this_category
+  #   category.save
+  #   category
+  # end
 
-  def users_name
-    ['John', 'Luke', 'Master Chief', 'Louisa', 'Elaine', 'Adam']
-  end
+  # def users_name
+  #   ['John', 'Luke', 'Master Chief', 'Louisa', 'Elaine', 'Adam']
+  # end
 
-  def create_user(name)
-    user = User.new
-    this_user = name
-    user.name = this_user
-    user.user_name = this_user
-    user.email = "#{this_user}@example.com"
-    user.password = 'password'
-    user.password_confirmation = 'password'
-    user.save!
-    user
-  end
+  # def create_user(name)
+  #   user = User.new
+  #   this_user = name
+  #   user.name = this_user
+  #   user.user_name = this_user
+  #   user.email = "#{this_user}@example.com"
+  #   user.password = 'password'
+  #   user.password_confirmation = 'password'
+  #   user.save!
+  #   user
+  # end
 
-  def create_users
-    users_name.each do |name|
-      user = create_user(name)
-      puts "Created User #{user.email}"
-    end
-  end
+  # def create_users
+  #   users_name.each do |name|
+  #     user = create_user(name)
+  #     puts "Created User #{user.email}"
+  #   end
+  # end
 
 end
 
