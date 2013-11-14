@@ -1,6 +1,16 @@
-.bgimage {
-  background: image-url('bg_004.jpg') no-repeat;
+html {
+  background: image-url('bg_004.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
+
+body {
+  background-color: transparent !important;
+}
+
+
 .navbar-default {
   height: 250px;
 }
@@ -9,9 +19,11 @@
 .navbar {
   background: transparent image-url('fs_header-bar.png') no-repeat left top;
   height: 238px;
+  width: 100%;
   border: none;
   opacity: .90;
-  position: relative;
+  // position: fixed;
+  top: 0px;
   z-index:100;
 }
 .navbar-brand{
