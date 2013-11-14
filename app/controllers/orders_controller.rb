@@ -1,8 +1,11 @@
 class OrdersController < ApplicationController
 
   def index
-    unless is_admin?
-      @orders = current_user.orders.where(status: "completed")
+    if !current_user
+      flash.notice = 'You need to sign in to view past orders'
+      redirect_to new_session_path
+    elsif !current_user.admin?
+      @orders = current_user.orders.where(status: 'completed')
     else
       @orders = Order.all
     end

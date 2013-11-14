@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
-
+  before_action :is_admin?, only: [:index]
   include UsersHelper
+
+  def index
+    @users = User.all
+  end
 
   def new
     @user = User.new

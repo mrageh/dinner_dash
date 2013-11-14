@@ -1,0 +1,11 @@
+<div class='default-header'>
+  <div class='left-arrow'><%= image_tag 'body_arrow_right.png' %></div>
+  <div class="header-text" id="<%= dom_id(element) %>">
+    <% if element.respond_to?(:name) %>
+      <%= element.name %>
+    <% else %>
+      <%= element %>
+    <% end %>
+  </div>
+  <div class='right-arrow'><%= image_tag 'body_arrow_left.png' %></div>
+</div>
