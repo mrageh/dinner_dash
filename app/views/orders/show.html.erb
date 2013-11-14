@@ -6,12 +6,12 @@
     <%= image_tag "items_#{order_item.item_id}.jpg", class: "item_img" %>
       <p><b>name: </b><%= order_item.item.name %></p>
       <p><b>description: </b><%= order_item.item.description %></p>
-      <p><b>price: </b><%= order_item.item.price %></p>
+      <p><b>price: </b><%= number_to_currency(order_item.item.price) %></p>
       <p><b>quantity: </b><%= order_item.quantity %> </br>
       <%= link_to "Remove From Cart", order_item_path(order_item), {class: "Remove From Cart", method: :delete} %>
     <% end %>
     <hr>
-      <p><b> Order Total: </b><%= @order.total %></p>
+      <p><b> Order Total: </b><%= number_to_currency(@order.total) %></p>
       <% if current_order.items.any? %> 
         <%= link_to "Submit Order", checkout_path, class: "submit_order" %>
         <% else %>

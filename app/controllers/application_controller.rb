@@ -37,7 +37,7 @@ class ApplicationController < ActionController::Base
 
   def is_admin?
     unless current_user && current_user.admin?
-      flash.notice = 'Page does not exists?'
+      flash.notice = 'Page does not exist!'
       redirect_to root_path
     end
   end

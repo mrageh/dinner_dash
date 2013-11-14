@@ -8,7 +8,7 @@
           <p class = "item_title"><%= item.name %></p>
           <%= image_tag "items_#{item.id}.jpg", class: "item_img" %>
           <p>description: <%= item.description %></p>
-          <p>price: <%= item.price %></p>
+          <p>price: <%= number_to_currency(item.price) %></p>
           <%= form_for item.order_items.new do |f| %>
             <%= f.hidden_field :item_id %>
             <%= f.submit "Add to Cart" %>
