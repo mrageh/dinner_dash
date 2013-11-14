@@ -3,7 +3,7 @@ require 'csv'
 class Seeder
   def initialize
     create_item
-    # create_categories
+    create_categories
     # create_users
   end
 
@@ -40,6 +40,12 @@ class Seeder
     # item
   end
 
+  def create_categories
+    categories_names.each do |category_name|
+      Category.create(name: category_name)
+    end
+  end
+
   # def create_categories
   #   4.times do
   #     category = create_category
@@ -47,9 +53,9 @@ class Seeder
   #   end
   # end
 
-  # def categories_name
-  #   ['Sandwiches', 'Beverages', 'Sides', 'Baked Goods']
-  # end
+   def categories_names
+     ['Sandwiches', 'Beverages', 'Sides', 'Baked Goods']
+   end
 
   # def create_category
   #   category = Category.new
