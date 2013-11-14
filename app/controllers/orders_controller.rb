@@ -28,9 +28,4 @@ class OrdersController < ApplicationController
       redirect_to new_session_path
     end
   end
-
-  # def add_to_cart
-
-  #   redirect_to categories_path
-  # end
 end
