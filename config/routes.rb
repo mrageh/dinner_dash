@@ -7,6 +7,7 @@ DinnerDash::Application.routes.draw do
   resource  :session,     :only => [:new, :create, :destroy]
   resources :users
   get 'signup', to: 'users#new', as: 'signup'
+  get 'dashboard', to: 'dashboard#index'
 
   # namespace :admin do
   #   resources :orders
